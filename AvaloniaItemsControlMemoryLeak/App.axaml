@@ -1,0 +1,25 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:AvaloniaItemsControlMemoryLeak"
+             xmlns:m="clr-namespace:AvaloniaItemsControlMemoryLeak.Models"
+             xmlns:su="clr-namespace:SukiUI;assembly=SukiUI"
+             x:Class="AvaloniaItemsControlMemoryLeak.App"
+             RequestedThemeVariant="Dark">
+    <Application.DataTemplates>
+        <l:ViewLocator />
+
+        <DataTemplate x:DataType="m:Item">
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Id}" />
+                    <TextBlock Text="{Binding Name}" />
+                </StackPanel>
+            </Button>
+        </DataTemplate>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <!--<FluentTheme />-->
+        <su:SukiTheme ThemeColor="Green" />
+    </Application.Styles>
+</Application>
